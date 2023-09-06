@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _1741rwt.inm
+MODNAME: apmain
+RUNID: _1741rwt
+NEW_RUNID: _1741rwt
+OLD_RUNID: _1741rwt
+PDF: _1741rwt.appdf
+USERNAME: 241
+XMOD: D:\AspenTechV11\Aspen Plus V11.0\Engine\xeq\apmain
+SPONLY:

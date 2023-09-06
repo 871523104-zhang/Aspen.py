@@ -1,0 +1,10 @@
+SLAVE:
+INPUT: _4718des.inm
+MODNAME: apmain
+RUNID: _4718des
+NEW_RUNID: _4718des
+OLD_RUNID: _4718des
+PDF: _4718des.appdf
+USERNAME: 241
+XMOD: D:\AspenTechV11\Aspen Plus V11.0\Engine\xeq\apmain
+SPONLY:
