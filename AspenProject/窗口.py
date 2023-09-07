@@ -3,7 +3,6 @@ from tkinter import ttk
 from tkinter.ttk import *
 from tkinter import *
 import ttkbootstrap as ttkb
-import pandas as pd
 
 # ////////////////////函数////////////////////////
 class myWindow:
