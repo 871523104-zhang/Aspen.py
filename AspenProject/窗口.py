@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.ttk import *
 from tkinter import *
-from CodeLibrary import Simulation
 import ttkbootstrap as ttkb
 import pandas as pd
 
@@ -138,14 +137,14 @@ class myWindow:
         label.grid(row=17, column=2)
 
         # 绘制确定设置按钮
-        combobox_button = tk.Button(self.fr1, text="确定", command=self.result_sim)
+        combobox_button = tk.Button(self.fr1, text="确定")
         combobox_button.grid(row=20, column=1)
 
         # 绘制运行按钮
-        run_button = tk.Button(self.fr1, text="运行Aspen", command=sim.EngineRun)
+        run_button = tk.Button(self.fr1, text="运行Aspen")
         run_button.grid(row=21, column=0)
         # 绘制结束按钮
-        close_button = tk.Button(self.fr1, text="关闭Aspen", command=sim.CloseAspen)
+        close_button = tk.Button(self.fr1, text="关闭Aspen")
         close_button.grid(row=21, column=2)
 
 
@@ -161,37 +160,7 @@ class myWindow:
         # print(result)
         # # print(result.loc[['From', 'Description'], 'Unnamed: 3'])
 
-    # 响应函数：获得当前选择选项，##使用var.get()来获得目前选项内容
-    def result_sim(self):
-        Method = self.method.get()
-        sim.GLB_Set_Method(Method)
-
-        Fume_Temperature = self.fume_temperature.get()
-        sim.FUME_Set_Temperature(Fume_Temperature)
-        Fume_Pressure = self.fume_pressure.get()
-        sim.FUME_Set_Pressure(Fume_Pressure)
-        Total_Flow_Rate = self.total_flow_rate.get()
-        sim.FUME_Set_Total_Flow_Rate(Total_Flow_Rate)
-        Fume_H2O = self.fume_H2O.get()
-        sim.FUME_Set_H2O(Fume_H2O)
-        Fume_N2 = self.fume_N2.get()
-        sim.FUME_Set_N2(Fume_N2)
-        Fume_CO2 = self.fume_CO2.get()
-        sim.FUME_Set_CO2(Fume_CO2)
-        Fume_O2 = self.fume_O2.get()
-        sim.FUME_Set_O2(Fume_O2)
-
-        ColdSource_Temperature = self.coldsource_temperature.get()
-        sim.COLDSOURCE_Set_Temperature(ColdSource_Temperature)
-        ColdSource_Pressure = self.coldsource_pressure.get()
-        sim.COLDSOURCE_Set_Pressure(ColdSource_Pressure)
-        ColdSource_Total_Flow_Rate = self.coldsource_total_flow_rate.get()
-        sim.COLDSOURCE_Set_Total_Flow_Rate(ColdSource_Total_Flow_Rate)
-
 # ///////////////////////实例化//////////////////////////
-sim = Simulation(AspenFileName="耦合工艺20230413.apw",
-                         WorkingDirectoryPath=r"F:\AspenTest\耦合工艺20230413",
-                         VISIBILITY=True)
 root = tk.Tk()
 style = ttkb.Style("morph")
 setting_window = myWindow()
