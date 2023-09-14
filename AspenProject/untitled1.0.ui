@@ -78,7 +78,7 @@
         <rect>
          <x>0</x>
          <y>110</y>
-         <width>40</width>
+         <width>51</width>
          <height>161</height>
         </rect>
        </property>
@@ -265,6 +265,12 @@ QPushButton:hover{
             <height>521</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
           <widget class="QWidget" name="page_write">
            <widget class="QFrame" name="frame_9">
             <property name="geometry">
@@ -351,6 +357,11 @@ QGroupBox::title{
                <height>91</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QLlineEdit{
+	background-color:rgb(85, 0, 255)
+}</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -378,6 +389,20 @@ QGroupBox::title{
                 <width>91</width>
                 <height>20</height>
                </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+	background-color:rgb(236,236,236)
+}</string>
+              </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
               </property>
              </widget>
              <widget class="QLabel" name="label_5">
@@ -429,6 +454,17 @@ QGroupBox::title{
                  <width>91</width>
                  <height>21</height>
                 </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+	background-color:rgb(236,236,236)
+}</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
               <widget class="QLabel" name="label_7">
@@ -482,6 +518,17 @@ QGroupBox::title{
                  <height>20</height>
                 </rect>
                </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+	background-color:rgb(236,236,236)
+}</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
+               </property>
               </widget>
               <widget class="QLabel" name="label_9">
                <property name="geometry">
@@ -506,6 +553,11 @@ QGroupBox::title{
                <width>331</width>
                <height>121</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+	background-color:rgb(236,236,236)
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -574,6 +626,12 @@ QGroupBox::title{
                 <height>20</height>
                </rect>
               </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
              </widget>
              <widget class="QLineEdit" name="lineEdit_5">
               <property name="geometry">
@@ -583,6 +641,12 @@ QGroupBox::title{
                 <width>91</width>
                 <height>20</height>
                </rect>
+              </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
               </property>
              </widget>
              <widget class="QLineEdit" name="lineEdit_6">
@@ -594,6 +658,12 @@ QGroupBox::title{
                 <height>20</height>
                </rect>
               </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
              </widget>
              <widget class="QLineEdit" name="lineEdit_7">
               <property name="geometry">
@@ -604,6 +674,12 @@ QGroupBox::title{
                 <height>20</height>
                </rect>
               </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
+              </property>
              </widget>
             </widget>
            </widget>
@@ -613,7 +689,7 @@ QGroupBox::title{
               <x>30</x>
               <y>290</y>
               <width>851</width>
-              <height>131</height>
+              <height>201</height>
              </rect>
             </property>
             <property name="title">
@@ -627,6 +703,11 @@ QGroupBox::title{
                <width>571</width>
                <height>91</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+	background-color:rgb(236,236,236)
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -655,6 +736,12 @@ QGroupBox::title{
                 <width>91</width>
                 <height>20</height>
                </rect>
+              </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string>0</string>
               </property>
              </widget>
              <widget class="QLabel" name="label_15">
@@ -706,6 +793,12 @@ QGroupBox::title{
                  <width>91</width>
                  <height>21</height>
                 </rect>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
               <widget class="QLabel" name="label_17">
@@ -759,6 +852,12 @@ QGroupBox::title{
                  <height>20</height>
                 </rect>
                </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
+               </property>
               </widget>
               <widget class="QLabel" name="label_19">
                <property name="geometry">
@@ -774,6 +873,19 @@ QGroupBox::title{
                </property>
               </widget>
              </widget>
+            </widget>
+            <widget class="QLabel" name="label_20">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>150</y>
+               <width>61</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
             </widget>
            </widget>
           </widget>
@@ -901,8 +1013,8 @@ QGroupBox::title{
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>907</x>
-     <y>35</y>
+     <x>944</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
      <x>979</x>
@@ -917,8 +1029,8 @@ QGroupBox::title{
    <slot>showMinimized()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>856</x>
-     <y>34</y>
+     <x>909</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
      <x>978</x>
