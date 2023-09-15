@@ -6,10 +6,16 @@ from CodeLibrary import Simulation
 import ttkbootstrap as ttkb
 import pandas as pd
 
+# 正在构建标签页，还没有实现标签切换页面
+# 学习数据处理pandas
+
+
+
 # ////////////////////函数////////////////////////
 class myWindow:
     # 定义构造函数，绘制窗体
     def __init__(self):
+        self.fr2 = None
         self.fr1 = None
         self.coldsource_temperature = None
         self.fume_O2 = None
@@ -138,14 +144,14 @@ class myWindow:
         label.grid(row=17, column=2)
 
         # 绘制确定设置按钮
-        combobox_button = tk.Button(self.fr1, text="确定", command=self.result_sim)
+        combobox_button = tk.Button(self.fr2, text="确定", command=self.result_sim)
         combobox_button.grid(row=20, column=1)
 
         # 绘制运行按钮
-        run_button = tk.Button(self.fr1, text="运行Aspen", command=sim.EngineRun)
+        run_button = tk.Button(self.fr2, text="运行Aspen", command=sim.EngineRun)
         run_button.grid(row=21, column=0)
         # 绘制结束按钮
-        close_button = tk.Button(self.fr1, text="关闭Aspen", command=sim.CloseAspen)
+        close_button = tk.Button(self.fr2, text="关闭Aspen", command=sim.CloseAspen)
         close_button.grid(row=21, column=2)
 
 
