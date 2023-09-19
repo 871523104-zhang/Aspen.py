@@ -4,8 +4,12 @@ from tkinter.ttk import *
 from tkinter import *
 import ttkbootstrap as ttkb
 import pandas as pd
+from PIL import ImageTk, Image
 
 # 正在尝试排版
+#   ·画网格
+#   °ppt放置控件
+
 # 正在尝试植入到主程序中
 # 学习数据处理pandas
 
@@ -25,11 +29,17 @@ root.title("Aspen设置")
 root.geometry("800x500")
 note = Notebook(root, width=800, height=500)
 
+# 添加标题图片
+img = Image.open('标题.png')
+photo = ImageTk.PhotoImage(img)
+imglabel = Label(root, image=photo)
+imglabel.place(x=0, y=0)
+
 fr1 = Frame()
 fr2 = Frame()
 fr3 = Frame()
 
-note.place(x=0, y=0)
+note.place(x=0, y=70)
 
 note.add(fr1, text='input')
 note.add(fr2, text='result')
@@ -38,30 +48,40 @@ note.add(fr3, text='...')
 # 构建网格
 label = tk.Label(fr1, text="1")
 label.place(x=0, y=0)
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr1, text="2")
 label.place(x=100, y=0)
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr1, text="3")
 label.place(x=200, y=0)
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr1, text="4")
 label.place(x=300, y=0)
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr1, text="5")
 label.place(x=400, y=0)
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr1, text="6")
 label.place(x=500, y=0)
+label = tk.Label(fr1, text="7")
+label.place(x=600, y=0)
+label = tk.Label(fr1, text="8")
+label.place(x=700, y=0)
 
+label = tk.Label(fr1, text="1")
+label.place(x=0, y=100)
+label = tk.Label(fr1, text="2")
+label.place(x=0, y=200)
+label = tk.Label(fr1, text="3")
+label.place(x=0, y=300)
 
+# base method
+label = tk.Label(fr1, text="Base method:", font=('等线', 15))
+label.place(x=0, y=10)
+method = tk.StringVar()
+choice = tk.ttk.Combobox(fr1, textvariable=method, values=["IDEAL", "PENG-ROB"], font=('等线', 10), width=10)
+choice.current(0)
+choice.place(x=123, y=9)
 
-# label = tk.Label(fr1, text="Base method:")
-# label.place(x=100, y=10)
-# method = tk.StringVar()
-# choice = tk.ttk.Combobox(fr1, textvariable=method, values=["IDEAL", "PENG-ROB"])
-# choice.current(0)
-# choice.place(x=2, y=10)
-
-# labFrame1 = Labelframe(fr1, text='烟气入口条件', width=100)
-# labFrame1.place(x=45, y=60)
-# label1 = tk.Label(labFrame1, text="状态变量", width=10)
-# label1.grid(row=0, column=0, padx=20, pady=5)
+labFrame1 = Labelframe(fr1, text='烟气入口条件', width=100, height=300)
+labFrame1.place(x=45, y=60)
+label1 = tk.Label(labFrame1, text="状态变量", width=10)
+label1.grid(row=0, column=0, padx=20, pady=5)
 # # 状态变量（温度）-文本框
 # label = tk.Label(labFrame1, text="温度：")
 # label.grid(row=1, column=0)
