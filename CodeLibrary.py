@@ -21,7 +21,6 @@ If you change it, update it, fix something just email me such that I can also up
 """
 
 
-
 class Simulation():
     """Class which starts a Simulation interface instance
     

@@ -1,28 +1,56 @@
+from CodeLibrary import Simulation
 import tkinter as tk
 from tkinter import ttk
 from tkinter.ttk import *
 from tkinter import *
 import ttkbootstrap as ttkb
-import pandas as pd
+# import pandas as pd
 from PIL import ImageTk, Image
 
 # 正在尝试排版
 #   ·画网格
-#   °ppt放置控件
+#   ·输入控件放置完成
+#   °选项卡设置
+#   °窗口文件移植到可打开Aspen文件中
+
+#   底边图片加不上！！！！！！！！！！！！！！！！！！！！！！！9.20
 
 # 正在尝试植入到主程序中
 # 学习数据处理pandas
 
 
-        # fpath = "F:\AspenTest\耦合工艺20230413\Result1.xlsx"
-        # result = pd.read_excel(fpath)
-        # result.set_index(["Unnamed: 2"], inplace=True)
-        # result = result.drop(labels=['Unnamed: 0', 'Unnamed: 1'], axis=1)
-        # # result = result.drop(labels=['From'], axis=0)
-        # print(result)
-        # # print(result.loc[['From', 'Description'], 'Unnamed: 3'])
-
 # ///////////////////////实例化//////////////////////////
+sim = Simulation(AspenFileName="耦合工艺20230413.apw", WorkingDirectoryPath=r"F:\AspenTest\耦合工艺20230413",
+                 VISIBILITY=True)
+
+
+def result_sim():
+    Method = method.get()
+    sim.GLB_Set_Method(Method)
+
+    Fume_Temperature = fume_temperature.get()
+    sim.FUME_Set_Temperature(Fume_Temperature)
+    Fume_Pressure = fume_pressure.get()
+    sim.FUME_Set_Pressure(Fume_Pressure)
+    Total_Flow_Rate = total_flow_rate.get()
+    sim.FUME_Set_Total_Flow_Rate(Total_Flow_Rate)
+    Fume_H2O = fume_H2O.get()
+    sim.FUME_Set_H2O(Fume_H2O)
+    Fume_N2 = fume_N2.get()
+    sim.FUME_Set_N2(Fume_N2)
+    Fume_CO2 = fume_CO2.get()
+    sim.FUME_Set_CO2(Fume_CO2)
+    Fume_O2 = fume_O2.get()
+    sim.FUME_Set_O2(Fume_O2)
+
+    ColdSource_Temperature = coldsource_temperature.get()
+    sim.COLDSOURCE_Set_Temperature(ColdSource_Temperature)
+    ColdSource_Pressure = coldsource_pressure.get()
+    sim.COLDSOURCE_Set_Pressure(ColdSource_Pressure)
+    ColdSource_Total_Flow_Rate = coldsource_total_flow_rate.get()
+    sim.COLDSOURCE_Set_Total_Flow_Rate(ColdSource_Total_Flow_Rate)
+
+
 root = tk.Tk()
 style = ttkb.Style("morph")
 root.title("Aspen设置")
@@ -30,10 +58,16 @@ root.geometry("800x500")
 note = Notebook(root, width=800, height=500)
 
 # 添加标题图片
-img = Image.open('标题.png')
-photo = ImageTk.PhotoImage(img)
+img1 = Image.open(r"F:\AspenPlus-Python-Interface-main\AspenPlus-Python-Interface-main\AspenProject\标题.png")
+photo = ImageTk.PhotoImage(img1)
 imglabel = Label(root, image=photo)
 imglabel.place(x=0, y=0)
+# 添加底边图片
+# img2 = Image.open(r"F:\AspenPlus-Python-Interface-main\AspenPlus-Python-Interface-main\AspenProject\底边.png")
+# global photo2
+# photo2 = ImageTk.PhotoImage(img2)
+# imglabel2 = Label(root, image=photo2)
+# imglabel2.place(x=0, y=400)
 
 fr1 = Frame()
 fr2 = Frame()
@@ -45,33 +79,32 @@ note.add(fr1, text='input')
 note.add(fr2, text='result')
 note.add(fr3, text='...')
 
-# 构建fr1框架（用canvas）
-
 
 # 构建网格
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr2, text="1")
 label.place(x=0, y=0)
-label = tk.Label(fr1, text="2")
+label = tk.Label(fr2, text="2")
 label.place(x=100, y=0)
-label = tk.Label(fr1, text="3")
+label = tk.Label(fr2, text="3")
 label.place(x=200, y=0)
-label = tk.Label(fr1, text="4")
+label = tk.Label(fr2, text="4")
 label.place(x=300, y=0)
-label = tk.Label(fr1, text="5")
+label = tk.Label(fr2, text="5")
 label.place(x=400, y=0)
-label = tk.Label(fr1, text="6")
+label = tk.Label(fr2, text="6")
 label.place(x=500, y=0)
-label = tk.Label(fr1, text="7")
+label = tk.Label(fr2, text="7")
 label.place(x=600, y=0)
-label = tk.Label(fr1, text="8")
+label = tk.Label(fr2, text="8")
 label.place(x=700, y=0)
 
-label = tk.Label(fr1, text="1")
+label = tk.Label(fr2, text="1")
 label.place(x=0, y=100)
-label = tk.Label(fr1, text="2")
+label = tk.Label(fr2, text="2")
 label.place(x=0, y=200)
-label = tk.Label(fr1, text="3")
+label = tk.Label(fr2, text="3")
 label.place(x=0, y=300)
+
 
 # base method
 label = tk.Label(fr1, text="Base method:", font=('等线', 15))
@@ -81,6 +114,8 @@ choice = tk.ttk.Combobox(fr1, textvariable=method, values=["IDEAL", "PENG-ROB"],
 choice.current(0)
 choice.place(x=400, y=9)
 
+
+# 烟气入口条件
 labFrame1 = Labelframe(fr1, text='烟气入口条件')  # 此处为避免放不下控件不能设置固定的宽高，但可以通过控制控件大小来控制宽高
 labFrame1.place(x=90, y=60)
 label = tk.Label(labFrame1, text="   ")
@@ -171,15 +206,19 @@ label.grid(row=4, column=2, sticky='w')
 label = tk.Label(labFrame2, text="   ")
 label.grid(row=5, column=0)
 
-# 绘制确定设置按钮
-combobox_button = tk.Button(fr1, text="确定")
-combobox_button.place(x=540, y=220)
 
+# 绘制确定设置按钮
+combobox_button = tk.Button(fr1, text="确定", command=result_sim)
+combobox_button.place(x=540, y=220)
 # 绘制运行按钮
-run_button = tk.Button(fr1, text="运行Aspen")
+run_button = tk.Button(fr1, text="运行Aspen", command=sim.EngineRun)
 run_button.place(x=470, y=260)
-# # 绘制结束按钮
-close_button = tk.Button(fr1, text="关闭Aspen")
+# 绘制结束按钮
+close_button = tk.Button(fr1, text="关闭Aspen", command=sim.CloseAspen)
 close_button.place(x=573, y=260)
+
+
+# 绘制输出窗口
+
 
 root.mainloop()
