@@ -4,7 +4,6 @@ from tkinter import ttk
 from tkinter.ttk import *
 from tkinter import *
 import ttkbootstrap as ttkb
-# import pandas as pd
 from PIL import ImageTk, Image
 
 # 正在尝试排版
@@ -12,6 +11,7 @@ from PIL import ImageTk, Image
 #   ·输入控件放置完成
 #   °选项卡设置
 #   °窗口文件移植到可打开Aspen文件中
+#   ·输出方法找到了！！！可以不用导出到excel，而是直接在变量管理器里就能找到！！真的是，原来这么简单。。。
 
 #   底边图片加不上！！！！！！！！！！！！！！！！！！！！！！！9.20
 
@@ -201,7 +201,7 @@ label.grid(row=4, column=0)
 coldsource_total_flow_rate = tk.DoubleVar()
 TotalFlowRateInput = tk.Entry(labFrame2, textvariable=coldsource_total_flow_rate)
 TotalFlowRateInput.grid(row=4, column=1)
-label = tk.Label(labFrame2, text="scmh (Mole)")
+label = tk.Label(labFrame2, text="kg/hr")
 label.grid(row=4, column=2, sticky='w')
 label = tk.Label(labFrame2, text="   ")
 label.grid(row=5, column=0)
@@ -219,6 +219,9 @@ close_button.place(x=573, y=260)
 
 
 # 绘制输出窗口
-
+label = tk.Label(fr2, text="Temperature：", font="bold")
+label.grid(row=0, column=0)
+label = tk.Label(fr2, text=sim.GET_RESULT_TEMPERATURE())
+label.grid(row=0, column=1)
 
 root.mainloop()

@@ -90,6 +90,13 @@ class Simulation():
         """
         return self.AspenSimulation.Tree.Elements("Data").Elements("Streams").Elements("LM101").Elements("Input")
 
+    @property
+    def RESULT(self):
+        """
+        定义节点路径
+        """
+        return self.AspenSimulation.Tree.Elements("Data").Elements("Streams").Elements("PRODUCT").Elements("Output")
+
     #Type definition to simplify the type hinting:
     Phnum = Literal[1,2,3]
     Ph = Literal["L", "V", "S"]
@@ -561,6 +568,11 @@ class Simulation():
         self.COLDSOURCE.Elements("PRES").Elements("MIXED").Value = coldsource_Pressure
     def COLDSOURCE_Set_Total_Flow_Rate(self, coldsource_Total_Flow_Rate):
         self.COLDSOURCE.Elements("TOTFLOW").Elements("MIXED").Value = coldsource_Total_Flow_Rate
+
+###result
+    def GET_RESULT_TEMPERATURE(self):
+        return self.RESULT.Elements("TEMP_OUT").Elements("MIXED").Value
+
 ###DSTWU
 #PAGE 1         Specification:
     #Choice between giving Number of Stages or Refluxratio:
