@@ -572,6 +572,8 @@ class Simulation():
 ###result
     def GET_RESULT_TEMPERATURE(self):
         return self.RESULT.Elements("TEMP_OUT").Elements("MIXED").Value
+    def GET_RESULT_PRESSURE(self):
+        return self.RESULT.Elements("PRES_OUT").Elements("MIXED").Value
 
 ###DSTWU
 #PAGE 1         Specification:
