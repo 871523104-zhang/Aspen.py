@@ -574,6 +574,66 @@ class Simulation():
         return self.RESULT.Elements("TEMP_OUT").Elements("MIXED").Value
     def GET_RESULT_PRESSURE(self):
         return self.RESULT.Elements("PRES_OUT").Elements("MIXED").Value
+    def GET_RESULT_MolarEnthalpy(self):
+        return self.RESULT.Elements("HMX").Elements("MIXED").Value
+    def GET_RESULT_EnthalpyFlow(self):
+        return self.RESULT.Elements("HMX_FLOW").Elements("MIXED").Value
+    def GET_RESULT_MassEnthalpy(self):
+        return self.RESULT.Elements("HMX_MASS").Elements("MIXED").Value
+    def GET_RESULT_MASSFLOW(self):
+        return self.RESULT.Elements("MASSFLMX").Elements("MIXED").Value
+    def GET_RESULT_MASSFLOW_H2O(self):
+        return self.RESULT.Elements("MASSFLOW").Elements("MIXED").Elements("H2O").Value
+    def GET_RESULT_MASSFLOW_N2(self):
+        return self.RESULT.Elements("MASSFLOW").Elements("MIXED").Elements("N2").Value
+    def GET_RESULT_MASSFLOW_CO2(self):
+        return self.RESULT.Elements("MASSFLOW").Elements("MIXED").Elements("CO2").Value
+    def GET_RESULT_MASSFLOW_H3N(self):
+        return self.RESULT.Elements("MASSFLOW").Elements("MIXED").Elements("H3N").Value
+    def GET_RESULT_MASSFLOW_O2(self):
+        return self.RESULT.Elements("MASSFLOW").Elements("MIXED").Elements("O2").Value
+    def GET_RESULT_MASSFRAC_H2O(self):
+        return self.RESULT.Elements("MASSFRAC").Elements("MIXED").Elements("H2O").Value
+    def GET_RESULT_MASSFRAC_N2(self):
+        return self.RESULT.Elements("MASSFRAC").Elements("MIXED").Elements("N2").Value
+    def GET_RESULT_MASSFRAC_CO2(self):
+        return self.RESULT.Elements("MASSFRAC").Elements("MIXED").Elements("CO2").Value
+    def GET_RESULT_MASSFRAC_H3N(self):
+        return self.RESULT.Elements("MASSFRAC").Elements("MIXED").Elements("H3N").Value
+    def GET_RESULT_MASSFRAC_O2(self):
+        return self.RESULT.Elements("MASSFRAC").Elements("MIXED").Elements("O2").Value
+    def GET_RESULT_MOLEFLOW(self):
+        return self.RESULT.Elements("MOLEFLMX").Elements("MIXED").Value
+    def GET_RESULT_MOLEFLOW_H2O(self):
+        return self.RESULT.Elements("MOLEFLOW").Elements("MIXED").Elements("H2O").Value
+    def GET_RESULT_MOLEFLOW_N2(self):
+        return self.RESULT.Elements("MOLEFLOW").Elements("MIXED").Elements("N2").Value
+    def GET_RESULT_MOLEFLOW_CO2(self):
+        return self.RESULT.Elements("MOLEFLOW").Elements("MIXED").Elements("CO2").Value
+    def GET_RESULT_MOLEFLOW_H3N(self):
+        return self.RESULT.Elements("MOLEFLOW").Elements("MIXED").Elements("H3N").Value
+    def GET_RESULT_MOLEFLOW_O2(self):
+        return self.RESULT.Elements("MOLEFLOW").Elements("MIXED").Elements("O2").Value
+    def GET_RESULT_MOLEFRAC_H2O(self):
+        return self.RESULT.Elements("MOLEFRAC").Elements("MIXED").Elements("H2O").Value
+    def GET_RESULT_MOLEFRAC_N2(self):
+        return self.RESULT.Elements("MOLEFRAC").Elements("MIXED").Elements("N2").Value
+    def GET_RESULT_MOLEFRAC_CO2(self):
+        return self.RESULT.Elements("MOLEFRAC").Elements("MIXED").Elements("CO2").Value
+    def GET_RESULT_MOLEFRAC_H3N(self):
+        return self.RESULT.Elements("MOLEFRAC").Elements("MIXED").Elements("H3N").Value
+    def GET_RESULT_MOLEFRAC_O2(self):
+        return self.RESULT.Elements("MOLEFRAC").Elements("MIXED").Elements("O2").Value
+    def GET_RESULT_AverageMW(self):
+        return self.RESULT.Elements("MWMX").Elements("MIXED").Value
+    def GET_RESULT_MolarDensity(self):
+        return self.RESULT.Elements("RHOMX").Elements("MIXED").Value
+    def GET_RESULT_MassDensity(self):
+        return self.RESULT.Elements("RHOMX_MASS").Elements("MIXED").Value
+    def GET_RESULT_MolarEntropy(self):
+        return self.RESULT.Elements("SMX").Elements("MIXED").Value
+    def GET_RESULT_MassEntropy(self):
+        return self.RESULT.Elements("SMX_MASS").Elements("MIXED").Value
 
 ###DSTWU
 #PAGE 1         Specification:
